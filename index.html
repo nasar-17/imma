@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Immaaa Cantiii</title>
+  <!-- Font & Ikon -->
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/navbar.css">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Dancing+Script:wght@700&family=Parisienne&display=swap" rel="stylesheet">
+  <style>
+    .logo {
+      font-family: 'Playfair Display', cursive; /* Pilihan font: 'Parisienne' atau 'Dancing Script' */
+      font-size: 20px;
+      font-weight: bold;
+      background: linear-gradient(45deg, #ff6b8b, #ff8e53);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+      letter-spacing: 2px;
+      margin: 0;
+      padding: 0.5rem 1rem;
+      display: inline-block;
+      border-bottom: 2px solid rgba(255,182,193,0.5);
+      transform: rotate(-2deg);
+      animation: float 3s ease-in-out infinite;
+    }
+
+    /* Animasi mengambang */
+    @keyframes float {
+      0% { transform: translateY(0px) rotate(-2deg); }
+      50% { transform: translateY(-5px) rotate(-2deg); }
+      100% { transform: translateY(0px) rotate(-2deg); }
+    }
+
+    /* Efek hover */
+    .logo:hover {
+      animation: none;
+      transform: scale(1.05) rotate(-2deg);
+      text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+      animation: float 3s ease-in-out infinite;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">ANDI IKMA<br> NANDA ANGGRIA</div>
+    <div class="nav-links">
+      <a href="#home" class="active">Home</a>
+      <a href="album.html">Album</a>
+      <a href="kata-kata.html">Kata-kata</a>
+      <a href="lagu.html">Lagu</a>
+      <a href="https://imma-ai-production.up.railway.app/">AI</a>
+    </div>
+    <div class="hamburger"><i class="fas fa-bars"></i></div>
+  </nav>
+
+  <!-- Overlay -->
+  <div class="overlay"></div>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <h1>Haii, <span id="typed-text"></span></h1>
+      <p>Selamat Datang Di Web Immaaa cantiiii</p>
+    </div>
+  </section>
+  
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/typed.js"></script>
+  <script>
+    // Inisialisasi manual
+    new Typed('#typed-text', {
+      strings: ["Sayanggg...", "Bububbb...", "cantiii..."],
+      typeSpeed: 100,
+      backSpeed: 50,
+      loop: true,
+      showCursor: true
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const hamburger = document.querySelector('.hamburger');
+      const navLinks = document.querySelector('.nav-links');
+      const overlay = document.querySelector('.overlay');
+
+      hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        overlay.classList.toggle('active');
+      });
+
+      // Close navbar when clicking on overlay or menu item
+      overlay.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        overlay.classList.remove('active');
+      });
+
+      const menuItems = document.querySelectorAll('.nav-links a');
+      menuItems.forEach(item => {
+        item.addEventListener('click', () => {
+          navLinks.classList.remove('active');
+          overlay.classList.remove('active');
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>

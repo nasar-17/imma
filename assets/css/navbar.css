@@ -1,0 +1,136 @@
+/* ===== NAVBAR ===== */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  
+  .navbar .logo {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--white);
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+  }
+  
+  .nav-links a {
+    color: var(--white);
+    text-decoration: none;
+    transition: 0.3s;
+  }
+  
+  .nav-links a:hover {
+    color: var(--pink-soft);
+    transform: translateY(-3px);
+  }
+  
+  /* Hamburger menu */
+  .hamburger {
+    display: none;
+    font-size: 2rem;
+    color: var(--white);
+    cursor: pointer;
+  }
+  
+  /* Mobile view: show hamburger and hide nav-links */
+  @media (max-width: 768px) {
+    .nav-links {
+      position: absolute;
+      top: 0;
+      right: -100%;
+      width: 250px;
+      height: 100vh;
+      background-color: var(--pink-dark);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transition: right 0.3s ease-in-out;
+    }
+  
+    .nav-links a {
+      padding: 1rem;
+      font-size: 1.5rem;
+      color: var(--white);
+      text-align: center;
+    }
+  
+    .nav-links.active {
+      right: 0;
+    }
+  
+    /* Show hamburger */
+    .hamburger {
+      display: block;
+    }
+  }
+  
+  /* ===== DARK MODE ===== */
+  [data-theme="dark"] {
+    .navbar {
+      background: rgba(255, 255, 255, 0.1);
+    }
+  
+    .nav-links a {
+      color: var(--white);
+    }
+  }
+
+  /* Mobile view: show hamburger and hide nav-links */
+@media (max-width: 768px) {
+    .nav-links {
+      position: absolute;
+      top: 0;
+      right: -100%;
+      width: 250px;
+      height: 100vh;
+      background-color: var(--pink-dark);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transition: right 0.3s ease-in-out;
+    }
+  
+    .nav-links a {
+      padding: 1rem;
+      font-size: 1.5rem;
+      color: var(--white);
+      text-align: center;
+      transition: 0.3s;
+    }
+  
+    .nav-links.active {
+      right: 0;
+    }
+  
+    /* Show hamburger */
+    .hamburger {
+      display: block;
+    }
+  
+    .overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 99;
+    }
+  
+    .overlay.active {
+      display: block;
+    }
+  }
+  

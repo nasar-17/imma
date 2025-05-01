@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Album | Immaaa Cantiii</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/navbar.css">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Dancing+Script:wght@700&family=Parisienne&display=swap" rel="stylesheet">
+  <style>
+    .logo {
+      font-family: 'Playfair Display', cursive; /* Pilihan font: 'Parisienne' atau 'Dancing Script' */
+      font-size: 20px;
+      font-weight: bold;
+      background: linear-gradient(45deg, #ff6b8b, #ff8e53);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+      letter-spacing: 2px;
+      margin: 0;
+      padding: 0.5rem 1rem;
+      display: inline-block;
+      border-bottom: 2px solid rgba(255,182,193,0.5);
+      transform: rotate(-2deg);
+      animation: float 3s ease-in-out infinite;
+    }
+
+    /* Animasi mengambang */
+    @keyframes float {
+      0% { transform: translateY(0px) rotate(-2deg); }
+      50% { transform: translateY(-5px) rotate(-2deg); }
+      100% { transform: translateY(0px) rotate(-2deg); }
+    }
+
+    /* Efek hover */
+    .logo:hover {
+      animation: none;
+      transform: scale(1.05) rotate(-2deg);
+      text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+      animation: float 3s ease-in-out infinite;
+    }
+    /* Custom styles for album page */
+    .gallery-section {
+      padding: 2rem;
+      text-align: center;
+    }
+    
+    .gallery-title {
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      color: var(--white);
+      text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+    
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+    
+    .gallery-item {
+      position: relative;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+      aspect-ratio: 1/1;
+      cursor: pointer;
+    }
+    
+    .gallery-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+    
+    .gallery-img, .gallery-video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    
+    .gallery-item:hover .gallery-img,
+    .gallery-item:hover .gallery-video {
+      transform: scale(1.05);
+    }
+    
+    /* Lightbox styles */
+    .lightbox {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.9);
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .lightbox-content {
+      max-width: 90%;
+      max-height: 90vh;
+    }
+    
+    .close-btn {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      color: var(--pink-soft);
+      font-size: 3rem;
+      cursor: pointer;
+    }
+    
+    @media (max-width: 768px) {
+      .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">ANDI IKMA<br> NANDA ANGGRIA</div>
+    <div class="nav-links">
+      <a href="../index.html">Home</a>
+      <a href="album.html" class="active">Album</a>
+      <a href="kata-kata.html">Kata-kata</a>
+      <a href="lagu.html">Lagu</a>
+      <a href="https://imma-ai-production.up.railway.app/">AI</a>
+    </div>
+        <!-- Hamburger Icon -->
+  <div class="hamburger">
+    <i class="fas fa-bars"></i>
+  </div>
+  </nav>
+  <!-- Overlay -->
+  <div class="overlay"></div>
+
+  <!-- Gallery Section -->
+  <section class="gallery-section">
+    <h2 class="gallery-title">Si Cantiii 💖</h2>
+    
+    <div class="gallery-grid">
+      <!-- Photo 1 -->
+      <div class="gallery-item">
+        <img src="assets/pic/imma10.jpg" alt="Our moment" class="gallery-img">
+      </div>
+      
+      <!-- Photo 2 -->
+      <div class="gallery-item">
+        <img src="assets/pic/imma11.jpg" alt="Together" class="gallery-img">
+      </div>
+      
+      
+      <!-- Photo 3 -->
+      <div class="gallery-item">
+        <img src="assets/pic/imma12.jpg" alt="Special day" class="gallery-img">
+      </div>
+
+      <div class="gallery-item">
+        <img src="assets/pic/imma13.jpg" alt="Special day" class="gallery-img">
+      </div>
+
+      <div class="gallery-item">
+        <img src="assets/pic/imma14.jpg" alt="Special day" class="gallery-img">
+      </div>
+
+      <div class="gallery-item">
+        <img src="assets/pic/imma15.jpg" alt="Special day" class="gallery-img">
+      </div>
+
+      <div class="gallery-item">
+        <img src="assets/pic/imma16.jpg" alt="Special day" class="gallery-img">
+      </div>
+
+      <div class="gallery-item">
+        <img src="assets/pic/imma17.jpg" alt="Special day" class="gallery-img">
+      </div>
+      <div class="gallery-item">
+        <img src="assets/pic/imma18.jpg" alt="Special day" class="gallery-img">
+      </div>
+      <div class="gallery-item">
+        <img src="assets/pic/imma19.jpg" alt="Special day" class="gallery-img">
+      </div>
+      
+      <!-- Add more photos/videos as needed -->
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox">
+    <span class="close-btn">&times;</span>
+    <img id="lightbox-img" class="lightbox-content">
+    <video id="lightbox-video" class="lightbox-content" controls></video>
+  </div>
+
+  <script>
+    // Lightbox functionality
+    document.querySelectorAll('.gallery-item').forEach(item => {
+      item.addEventListener('click', () => {
+        const lightbox = document.getElementById('lightbox');
+        const img = item.querySelector('img');
+        const video = item.querySelector('video');
+
+        if (video) {
+          document.getElementById('lightbox-img').style.display = 'none';
+          const lightboxVideo = document.getElementById('lightbox-video');
+          lightboxVideo.style.display = 'block';
+          lightboxVideo.src = video.querySelector('source').src;
+          lightboxVideo.poster = '';
+          lightboxVideo.play();
+        } else if (img) {
+          document.getElementById('lightbox-video').style.display = 'none';
+          const lightboxImg = document.getElementById('lightbox-img');
+          lightboxImg.style.display = 'block';
+          lightboxImg.src = img.src;
+        }
+
+        lightbox.style.display = 'flex';
+      });
+    });
+
+    // Close lightbox
+    document.querySelector('.close-btn').addEventListener('click', () => {
+      const lightbox = document.getElementById('lightbox');
+      const lightboxVideo = document.getElementById('lightbox-video');
+      lightbox.style.display = 'none';
+      lightboxVideo.pause();
+      lightboxVideo.currentTime = 0;
+    });
+
+    // Close when clicking outside content
+    document.getElementById('lightbox').addEventListener('click', (e) => {
+      if (e.target === document.getElementById('lightbox')) {
+        const lightbox = document.getElementById('lightbox');
+        const lightboxVideo = document.getElementById('lightbox-video');
+        lightbox.style.display = 'none';
+        lightboxVideo.pause();
+        lightboxVideo.currentTime = 0;
+      }
+    });
+    document.addEventListener('DOMContentLoaded', () => {
+  const hamburger = document.querySelector('.hamburger');
+  const navLinks = document.querySelector('.nav-links');
+
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+});
+
+
+  </script>
+
+  <!-- Main JS -->
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>
